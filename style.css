@@ -1,0 +1,491 @@
+/* Reset de margens e paddings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Archivo Black", serif;
+    --color1: #FFF;
+    --color2: #242424;
+    background-color: black;
+}
+
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: fixed;
+    background-color: var(--color2);
+    padding: 12px 20px;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+.logo {
+    color: var(--color1);
+    font-size: 3.4rem;
+    margin-left: 50px;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+}
+
+/* Estilo do fundo */
+.fundo_main {
+    width: 100%;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.menu li {
+    padding-left: 30px;
+}
+
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.15s ease-in-out;
+}
+
+.menu li a:hover:after {
+    width: 100%;
+}
+
+.open-menu, .close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+
+#check {
+    display: none;
+}
+
+/* Media query for screen widths of 1450px or less */
+@media(max-width: 1450px) {
+    .title-cta h2.ultimo {
+        font-size: 2.5rem; /* Smaller font size */
+    }
+
+    .title-cta h2.visto {
+        font-size: 2rem; /* Smaller font size */
+    }
+}
+
+@media(max-width: 886px) {
+    .nav-bar {
+        padding: 2px 4px;
+    }
+
+    .logo {
+        font-size: 2.8rem;
+        margin-left: 30px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li {
+        margin-top: 40px;
+    }
+    .menu li a {
+        padding: 10px;
+    }
+    .open-menu, .close-menu {
+        display: block;
+    }
+    #check:checked ~ .menu {
+        right: 0;
+    }
+
+    .cta-buttons-container {
+        width: 300px;
+        height: 25px;
+    }
+
+    .gallery-container {
+        height: 50vh; /* Reduces the height to 50% of the viewport height on smaller screens */
+    }
+
+    .gallery-container::after {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    }
+
+    .image-gallery {
+        display: block; /* Stack the images vertically for smaller screens */
+        width: 100%;
+        height: 50vh;
+    }
+
+    .gallery-slide {
+        height: 100%; /* Fill the container with the image */
+    }
+
+    .title-cta h2.ultimo {
+        font-size: 2rem; /* Even smaller font size */
+    }
+
+    .title-cta h2.visto {
+        font-size: 1.7rem; /* Even smaller font size */
+    }
+
+     /* Adjust grid layout for smaller screens */
+     .episodios-container {
+        grid-template-columns: 1fr; /* Change to 1 column */
+        grid-template-rows: repeat(3, 1fr); /* 3 rows for stacking items */
+        padding: 0 20px; /* Adjust padding */
+    }
+
+    .item1 {
+        grid-column: 1 / span 1; /* Takes full width */
+        grid-row: 1; /* First row */
+    }
+
+    .item2 {
+        grid-column: 1 / span 1; /* Takes full width */
+        grid-row: 2; /* Second row */
+    }
+
+    .item3 {
+        grid-column: 1 / span 1; /* Takes full width */
+        grid-row: 3; /* Third row */
+    }
+}
+
+
+@media(max-width: 735px) {
+    .nav-bar {
+        padding: 1px 2px;
+    }
+
+    .logo {
+        font-size: 2.2rem;
+        margin-left: 30px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li {
+        margin-top: 40px;
+    }
+    .menu li a {
+        padding: 10px;
+    }
+    .open-menu, .close-menu {
+        display: block;
+    }
+    #check:checked ~ .menu {
+        right: 0;
+    }
+
+    .cta-buttons-container {
+        width: 300px;
+        height: 25px;
+    }
+
+    .gallery-container {
+        height: 50vh; /* Reduces the height to 50% of the viewport height on smaller screens */
+    }
+
+    .gallery-container::after {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    }
+
+    .image-gallery {
+        display: block; /* Stack the images vertically for smaller screens */
+        width: 100%;
+        height: 50vh;
+    }
+
+    .gallery-slide {
+        height: 100%; /* Fill the container with the image */
+        object-fit: cover;
+    }
+
+    .title-cta h2.ultimo {
+        font-size: 1.7rem; /* Smaller font size */
+    }
+
+    .title-cta h2.visto {
+        font-size: 1.5rem; /* Smaller font size */
+    }    
+}
+
+
+@media (max-width: 735px) {
+    /* ... (other styles for this breakpoint) ... */
+
+    .episodios-container {
+        grid-gap: 10px; /* Reduced gap between iframes */
+        /* ... other styles for this breakpoint ... */
+    }
+    .item {
+        margin: 5px 0; /* Adjust margins */
+    }
+}
+
+/* Galeria de imagens */
+.gallery-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.image-gallery {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.gallery-slide {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Efeito de fade na galeria */
+.gallery-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+    pointer-events: none;
+}
+
+/* Botões dentro da galeria */
+.cta-buttons-container {
+    position: absolute;
+    bottom: 30%;  /* Fica a 20px da parte inferior da galeria */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 9;  /* Para que fiquem acima da galeria */
+}
+
+.cta-button1, .cta-button2 {
+    width: 200px;
+    height: 55px;
+    background-color: transparent;
+    border: 1.5px solid var(--color1);
+    color: var(--color1);
+    font-size: 1rem;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add smooth transition for both properties */
+}
+
+.cta-button1:hover, .cta-button2:hover {
+    background-color: #444;
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+.episodios-container {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(9, 1fr); /* 8 columns of equal width */
+    grid-template-rows: repeat(4, 1fr); /* 4 rows of equal height */
+    color: #FFF;
+    padding: 0% 4% 0% 4%; /* Keeps the same space on the left and right */
+    margin: 0 auto; /* Ensures the container stays centered */
+    justify-content: center; /* Centers the grid container horizontally */
+    align-items: center; /* Centers items vertically */
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%; /* Ensures the item uses the full width of the grid cell */
+    height: 100%; /* Ensures the item uses the full height of the grid cell */
+    transition: transform 0.2s ease-in-out; /* Smooth transition for the scale effect */
+}
+
+.item1 {
+    grid-column: 1 / span 6; /* Spans 3 columns, starts from column 1 */
+    grid-row: 1 / span 4 /* Spans 2 rows, starts from row 1 */
+}
+
+.item2 {   
+    grid-column: 7 / span 3; /* Spans 2 columns, starts from column 4 */
+    grid-row: 1 / span 2; /* Spans 2 rows, starts from row 1 */
+}
+
+.item3 {    
+    grid-column: 7 / span 3; /* Spans 3 columns, starts from column 6 */
+    grid-row: 3 / span 2; /* Spans 2 rows, starts from row 3 */
+}
+
+.item1:hover {
+    transform: scale(1.02); /* Scale the element up */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Add a 2px solid border with 50% opacity */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.item2:hover {
+    transform: scale(1.05); /* Scale the element up */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Add a 2px solid border with 50% opacity */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.item3:hover {
+    transform: scale(1.05); /* Scale the element up */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Add a 2px solid border with 50% opacity */
+    border-radius: 10px; /* Rounded corners */
+}
+
+ 
+
+.item iframe {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    max-width: 100%; /* Prevents overflow */
+    max-height: 100%; /* Prevents overflow */
+    border-radius: 15PX;
+}
+
+.title-cta {
+    display: flex;
+    justify-content: space-between; /* Ensures the titles are spaced out evenly */
+    align-items: center; /* Aligns the titles vertically in the center */
+    margin-bottom: 20px;
+    padding: 0% 4% 0% 4%; /* Keeps the same space on the left and right */
+}
+
+.title-cta h2 {
+    color: var(--color1);
+    font-weight: 400;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Base styles - largest screen size */
+.title-cta h2.ultimo {
+    font-size: 3.4rem;  /* Or whatever your largest size is */
+}
+
+.title-cta h2.visto {
+    font-size: 2rem;    /* Or whatever your largest size is */
+}
+
+/* Media Queries - reduce font sizes as needed */
+@media (max-width: 1450px) {
+    .title-cta h2.ultimo {
+        font-size: 2.5rem;
+    }
+
+    .title-cta h2.visto {
+        font-size: 1.6rem;
+    }
+}
+
+/* Media Queries - reduce font sizes as needed */
+@media (max-width: 1250px) {
+    .title-cta h2.ultimo {
+        font-size: 2.5rem;
+    }
+
+    .title-cta h2.visto {
+        font-size: 1.3rem;
+    }
+}
+
+/* Media Queries - reduce font sizes as needed */
+@media (max-width: 1000px) {
+    .title-cta h2.ultimo {
+        font-size: 2.5rem;
+    }
+
+    .title-cta h2.visto {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 886px) {
+    .title-cta h2.ultimo {
+        font-size: 2rem;
+    }
+
+    .title-cta h2.visto {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 735px) {
+    .title-cta h2.ultimo {
+        font-size: 1.5rem;
+    }
+
+    .title-cta h2.visto {
+        font-size: 0.7rem;
+    }
+}

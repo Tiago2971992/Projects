@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class='nav-bar'>
+                <a class="logo" href="#">MINDAFOCA</a>
+                <input type='checkbox' id='check' />
+                <span class="menu">
+                    <li><a href="">Episódios</a></li>
+                    <li><a href="">Equipa</a></li>
+                    <li><a href="">Sobre nós</a></li>
+                    <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+                </span>
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+            </ul>
+            <!-- Galeria de Imagens -->
+            <div class="gallery-container">
+                <div class="image-gallery">
+                    <img src="images/galery1.jpg" alt="Gallery Image 1" class="gallery-slide">
+                    <img src="images/IMG_1858 (1).jpg" alt="Gallery Image 2" class="gallery-slide">
+                    <img src="images/IMG_2711.jpg" alt="Gallery Image 3" class="gallery-slide">
+                </div>
+                <!-- Botões dentro da galeria -->
+                <div class="cta-buttons-container">
+                    <a class="cta-button1" href="#">EPISÓDIOS</a>
+                    <a class="cta-button2" href="#">EQUIPA</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+       
+       
+       
+       
+       
+        <div class="title-cta">
+            <h2 class="ultimo">ULTIMO EPISÓDIO</h2>
+            <h2 class="visto">EPISÓDIOS MAIS VISTOS</h2>
+        </div>
+            
+                
+                  
+        
+        <div class="episodios-container">
+            <div class="item item1"><iframe  src="https://www.youtube.com/embed/J2mOxUyXXNw?si=BstO0Nb4yGkvCzYZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div class="item item2"><iframe  src="https://www.youtube.com/embed/TYQzWsLpgk4?si=XwZPhTCkCMlyhtwV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div class="item item3"><iframe  src="https://www.youtube.com/embed/8zQh6Xder10?si=nMF8j63KMZm3mh6e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>         
+        </div>
+    
+        
+        
+    </main>
+
+    <script>
+        // Select the image gallery container
+        const gallery = document.querySelector('.image-gallery');
+        const slides = document.querySelectorAll('.gallery-slide');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        function changeSlide() {
+            // Move the gallery to the next slide
+            currentSlide++;
+            
+            // If it goes beyond the total slides, reset to 0 (loop the gallery)
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+            
+            // Apply the translation to move to the next image
+            gallery.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Automatically change the slide every 5 seconds
+        setInterval(changeSlide, 5000);
+
+        // Initial call to start the gallery
+        changeSlide();
+    </script>
+</body>
+</html>
